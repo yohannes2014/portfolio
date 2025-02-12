@@ -55,7 +55,7 @@ const handleMenu = () => {
 }
 
   return (
-    <div className={`w-ful ${scrolling ? 'shadow-background shadow-md bg-white' :''} bg-sky-50 mb-5`}>
+    <div className={`w-ful ${scrolling ? 'shadow-background shadow-md backdrop-blur-md' :''} mb-[-125px] lg:w-[1120px] m-auto`}>
          <div className="flex justify-between items-center mx-5 py-1">
             <div><a href="#"><img className="w-[70px]" src="logo.PNG" /></a></div>
             <div>
@@ -71,7 +71,7 @@ const handleMenu = () => {
              {clicked ? <IoMdClose className='cursor-pointer text-primary font-black text-[35px]' /> : <TbMenu3 className='cursor-pointer text-primary font-black text-[35px]' /> }
               
             </div>
-            <div className='bg-sky-50 shadow-md shadow-blue-300 w-full overflow-hidden absolute left-0 top-[90px]'>
+            <div className='shadow-md bg-slate-50 shadow-[#f3f3f3] w-full overflow-hidden absolute left-0 top-[90px]'>
                 <ul className={`flex gap-5 flex-col w-full items-center ${clicked ? '':'mt-[-350px]'} `}>
                     <li><a className="text-primary w-full font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#home">Home</a></li>
                     <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#service">Service</a></li>
