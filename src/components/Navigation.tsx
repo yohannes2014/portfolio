@@ -1,15 +1,61 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { TbMenu3 } from "react-icons/tb";
+import { IoMdClose } from "react-icons/io";
 
 const Navigation:React.FC = () => {
-  const [clicked, setClicked] = useState<boolean>(false)
+  const [clicked, setClicked] = useState<boolean>(false);
+  const [scrolling, setScrolling] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Event listener to detect scroll
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      }
+      else {
+        setScrolling(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener when component is unmounted
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
+ 
+  useEffect(() => {
+    // Function to check screen width
+    const checkScreenWidth = () => {
+      if (window.innerWidth > 768) {
+        setClicked(false);
+      } 
+    };
+
+    // Check screen width on initial load
+    checkScreenWidth();
+
+    // Add event listener to check on resize
+    window.addEventListener('resize', checkScreenWidth);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', checkScreenWidth);
+    };
+  }, []);
+
+
 
 const handleMenu = () => {
   setClicked(!clicked)
 }
 
   return (
-    
-    <div className='sticky top-0 w-ful bg-gray-100'>
+    <div className={`w-ful ${scrolling ? 'shadow-background shadow-md bg-white' :''} bg-sky-50 mb-5`}>
          <div className="flex justify-between items-center mx-5 py-1">
             <div><a href="#"><img className="w-[70px]" src="logo.PNG" /></a></div>
             <div>
@@ -21,10 +67,18 @@ const handleMenu = () => {
                     <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div onClick={handleMenu} className=" md:hidden flex flex-col gap-[5px] cursor-pointer group ">
-                <div className={`${clicked ? 'rotate-[40deg] translate-y-[6px] translate-x-[-1px]':''} w-[40px] h-[6px] rounded-md bg-primary group-hover:bg-light relative`}></div>
-                <div className={`${clicked ? 'translate-y-[20px] hidden':''} w-[45px] h-[6px] rounded-md bg-primary ml-1 group-hover:bg-light relative`}></div>
-                <div className={`${clicked ? 'rotate-[-50deg] translate-y-[-5px] translate-x-[-1px]':''} w-[40px] h-[6px] rounded-md bg-primary group-hover:bg-light relative`}></div>
+            <div onClick={handleMenu} className='md:hidden' >
+             {clicked ? <IoMdClose className='cursor-pointer text-primary font-black text-[35px]' /> : <TbMenu3 className='cursor-pointer text-primary font-black text-[35px]' /> }
+              
+            </div>
+            <div className='bg-sky-50 shadow-md shadow-blue-300 w-full overflow-hidden absolute left-0 top-[90px]'>
+                <ul className={`flex gap-5 flex-col w-full items-center ${clicked ? '':'mt-[-350px]'} `}>
+                    <li><a className="text-primary w-full font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#home">Home</a></li>
+                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#service">Service</a></li>
+                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#about">About</a></li>
+                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#portfolio">Portfolio</a></li>
+                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hovers:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#contact">Contact</a></li>
+                </ul>
             </div>
         </div>
     </div>
