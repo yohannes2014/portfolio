@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { TbMenu3 } from "react-icons/tb";
 import { IoMdClose } from "react-icons/io";
+import { HashLink  as Link} from "react-router-hash-link"
 
 const Navigation:React.FC = () => {
   const [clicked, setClicked] = useState<boolean>(false);
@@ -9,7 +10,7 @@ const Navigation:React.FC = () => {
   useEffect(() => {
     // Event listener to detect scroll
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 50) {   
         setScrolling(true);
       }
       else {
@@ -57,14 +58,14 @@ const handleMenu = () => {
   return (
     <div className={`w-ful ${scrolling ? 'shadow-background shadow-md backdrop-blur-md' :''} mb-[-125px] lg:w-[1120px] m-auto`}>
          <div className="flex justify-between items-center mx-5 py-1">
-            <div><a href="#"><img className="w-[70px]" src="logo.PNG" /></a></div>
+            <div><Link to="#home" smooth><img className="w-[70px]" src="logo.PNG" /></Link></div>
             <div>
                 <ul className="flex gap-5 md:inline-flex 4xs:hidden">
-                    <li><a className="text-primary  font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#home">Home</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#service">Service</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#about">About</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#portfolio">Portfolio</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#contact">Contact</a></li>
+                    <li><Link  className="text-primary  font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to='#home' smooth >Home</Link></li>
+                    <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#service" smooth >Service</Link></li>
+                    <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#about" smooth >About</Link></li>
+                    <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#portfolio" smooth >Portfolio</Link></li>
+                    <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#contact" smooth >Contact</Link></li>
                 </ul>
             </div>
             <div onClick={handleMenu} className='md:hidden' >
@@ -73,11 +74,11 @@ const handleMenu = () => {
             </div>
             <div className='shadow-md bg-slate-50 shadow-[#f3f3f3] w-full overflow-hidden absolute left-0 top-[90px]'>
                 <ul className={`flex gap-5 flex-col w-full items-center ${clicked ? '':'mt-[-350px]'} `}>
-                    <li><a className="text-primary w-full font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#home">Home</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#service">Service</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#about">About</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#portfolio">Portfolio</a></li>
-                    <li><a className="text-primary font-semibold text-[18px] after:rounded-sm hovers:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" href="#contact">Contact</a></li>
+                    <li><Link className="text-primary w-full font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#home" smooth>Home</Link></li>
+                    <li><Link className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#service" smooth>Service</Link></li>
+                    <li><Link className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#about" smooth>About</Link></li>
+                    <li><Link className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#portfolio" smooth>Portfolio</Link></li>
+                    <li><Link className="text-primary font-semibold text-[18px] after:rounded-sm hovers:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#contact" smooth>Contact</Link></li>
                 </ul>
             </div>
         </div>
