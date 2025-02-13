@@ -4,7 +4,7 @@ const HeroSection: React.FC = () => {
   return (
     <div
       id='home'
-      className="w-full 3xs:h-screen xl:h-[750px] bg-cover bg-center flex items-center"
+      className="w-full 3xs:h-screen xl:h-[700px] bg-cover bg-center flex items-center"
       style={{ backgroundImage: 'url(/HOMEback.jpg)' }} 
     >
         <div className='lg:w-[1120px] m-auto'>

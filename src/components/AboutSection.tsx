@@ -2,7 +2,7 @@ import React from 'react'
 
 const AboutSection: React.FC = () => {
   return (
-    <div className='lg:w-[1120px] m-auto pt-14' id='about'>
+    <div className='lg:w-[1120px] m-auto pt-14 lg:h-[700px]' id='about'>
       <p className='text-center text-primary font-bold text-[24px] mt-10'>About </p>
       <div className='flex justify-around'>
         <div className='w-[400px] flex justify-center items-center'>
