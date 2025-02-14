@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <Navigation />
       </div>
       <div>
-          <HeroSection/>
+      <HeroSection/>
       <Service />
       <AboutSection />
       <Portfolio />

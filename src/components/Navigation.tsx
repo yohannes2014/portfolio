@@ -56,9 +56,9 @@ const handleMenu = () => {
 }
 
   return (
-    <div className={`w-ful ${scrolling ? 'shadow-background shadow-md backdrop-blur-md' :''} mb-[-125px] lg:w-[1120px] m-auto`}>
+    <div className={`w-full ${scrolling ? 'shadow-background shadow-md backdrop-blur-md' :''} mb-[-125px] lg:w-[1120px] m-auto`}>
          <div className="flex justify-between items-center mx-5 py-1">
-            <div><Link to="#home" smooth><img className="w-[70px]" src="logo.PNG" /></Link></div>
+            <div><Link to="#home" smooth><img className="3xs:w-[55px] w-[40px]" src="logo.PNG" /></Link></div>
             <div>
                 <ul className="flex gap-5 md:inline-flex 4xs:hidden">
                     <li><Link  className="text-primary  font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to='#home' smooth >Home</Link></li>
@@ -69,16 +69,16 @@ const handleMenu = () => {
                 </ul>
             </div>
             <div onClick={handleMenu} className='md:hidden' >
-             {clicked ? <IoMdClose className='cursor-pointer text-primary font-black text-[35px]' /> : <TbMenu3 className='cursor-pointer text-primary font-black text-[35px]' /> }
+             {clicked ? <IoMdClose className='cursor-pointer text-primary font-black 3xs:text-[30px] text-[20px]' /> : <TbMenu3 className='cursor-pointer text-primary font-black 3xs:text-[30px] text-[20px]' /> }
               
             </div>
-            <div className='shadow-md bg-slate-50 shadow-[#f3f3f3] w-full overflow-hidden absolute left-0 top-[90px]'>
-                <ul className={`flex gap-5 flex-col w-full items-center ${clicked ? '':'mt-[-350px]'} `}>
-                    <li><Link onClick={()=>setClicked(false)} className="text-primary w-full font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#home" smooth>Home</Link></li>
-                    <li><Link onClick={()=>setClicked(false)} className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#service" smooth>Service</Link></li>
-                    <li><Link onClick={()=>setClicked(false)} className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#about" smooth>About</Link></li>
-                    <li><Link onClick={()=>setClicked(false)} className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#portfolio" smooth>Portfolio</Link></li>
-                    <li><Link onClick={()=>setClicked(false)} className="text-primary font-semibold text-[18px] after:rounded-sm hovers:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#contact" smooth>Contact</Link></li>
+            <div className='shadow-md bg-slate-50 shadow-[#f3f3f3] w-full overflow-hidden absolute left-0 3xs:top-[73px] top-[55px]'>
+                <ul className={`flex gap-1 flex-col w-full items-center ${clicked ? '':'mt-[-350px]'} `}>
+                    <li><Link onClick={()=>setClicked(false)} className="text-primary w-full 3xs:font-semibold 3xs:text-[18px] text-[16px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#home" smooth>Home</Link></li>
+                    <li><Link onClick={()=>setClicked(false)} className="text-primary 3xs:font-semibold 3xs:text-[18px] text-[16px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#service" smooth>Service</Link></li>
+                    <li><Link onClick={()=>setClicked(false)} className="text-primary 3xs:font-semibold 3xs:text-[18px] text-[16px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#about" smooth>About</Link></li>
+                    <li><Link onClick={()=>setClicked(false)} className="text-primary 3xs:font-semibold 3xs:text-[18px] text-[16px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#portfolio" smooth>Portfolio</Link></li>
+                    <li><Link onClick={()=>setClicked(false)} className="text-primary 3xs:font-semibold 3xs:text-[18px] text-[16px] after:rounded-sm hovers:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#contact" smooth>Contact</Link></li>
                 </ul>
             </div>
         </div>
