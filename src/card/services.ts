@@ -1,7 +1,7 @@
 export const serviceItem = [
 
     {
-        title:"Web Developmen",
+        title:"Web Development",
         container:"w-full px-3 bg-cover bg-center shadow-md shadow-gray-100 lg:col-start-3 rounded-md lg:col-end-6 cursor-pointer hover:shadow-lg shadow-blue-400",
        
         image:"url(/web.jpg)",
