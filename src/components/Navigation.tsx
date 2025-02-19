@@ -56,7 +56,7 @@ const handleMenu = () => {
 }
 
   return (
-    <div className={`w-full ${scrolling ? 'shadow-background shadow-md backdrop-blur-md' :''} mb-[-125px] lg:w-[1120px] m-auto`}>
+    <div className={`w-full ${scrolling ? 'shadow-nav backdrop-blur-md' :''} mb-[-125px] lg:w-[1120px] m-auto`}>
          <div className="flex justify-between items-center mx-5 py-1">
             <div><Link to="#home" smooth><img className="3xs:w-[55px] w-[40px]" src="logo.PNG" /></Link></div>
             <div>
