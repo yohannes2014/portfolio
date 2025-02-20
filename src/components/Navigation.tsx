@@ -60,7 +60,7 @@ const handleMenu = () => {
          <div className="flex justify-between items-center mx-5 py-1">
             <div><Link to="#home" smooth><img className="3xs:w-[55px] w-[40px]" src="logo.PNG" /></Link></div>
             <div>
-                <ul className="flex gap-5 md:inline-flex 4xs:hidden">
+                <ul className="flex gap-5 sm:inline-flex 4xs:hidden">
                     <li><Link  className="text-primary  font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to='#home' smooth >Home</Link></li>
                     <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#service" smooth >Service</Link></li>
                     <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#about" smooth >About</Link></li>
@@ -68,7 +68,7 @@ const handleMenu = () => {
                     <li><Link  className="text-primary font-semibold text-[18px] after:rounded-sm hover:text-light after:h-1 after:block after:w-full transition-all after:duration-300 after:ease-in-out duration-300 ease-in-out hover:after:bg-light" to="#contact" smooth >Contact</Link></li>
                 </ul>
             </div>
-            <div onClick={handleMenu} className='md:hidden' >
+            <div onClick={handleMenu} className='sm:hidden' >
              {clicked ? <IoMdClose className='cursor-pointer text-primary font-black 3xs:text-[30px] text-[20px]' /> : <TbMenu3 className='cursor-pointer text-primary font-black 3xs:text-[30px] text-[20px]' /> }
               
             </div>
